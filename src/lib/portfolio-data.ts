@@ -195,40 +195,283 @@ export const skillGroups = [
   },
 ];
 
+export interface LearningCredential {
+  id: string;
+  title: string;
+  issuer: string;
+  type: string;
+  category: "AI / ML" | "AGENTIC AI" | "MICROSOFT" | "CLOUD / DEVOPS" | "FULL STACK" | "WORKSHOPS" | "LEADERSHIP";
+  tier: "primary" | "secondary" | "activity";
+  date?: string;
+  description: string;
+  skills: string[];
+  credentialUrl?: string;
+  verified: boolean;
+}
+
+export const learningCredentials: LearningCredential[] = [
+  // 1. AI & MACHINE LEARNING
+  {
+    id: "aws-ml-foundations",
+    title: "AWS Academy Graduate – Machine Learning Foundations",
+    issuer: "AWS Academy",
+    type: "Training Badge",
+    category: "AI / ML",
+    tier: "primary",
+    description: "Machine Learning fundamentals, data preparation, model building, AI concepts, and AWS-based ML workflows.",
+    skills: ["Machine Learning", "Data Preparation", "Model Building", "AI Concepts", "AWS ML Workflows"],
+    verified: true,
+  },
+  {
+    id: "google-ai-agents",
+    title: "5-Day AI Agents: Intensive Vibe Coding Course With Google",
+    issuer: "Kaggle / Google Developer Program",
+    type: "Intensive Program",
+    category: "AI / ML",
+    tier: "primary",
+    description: "Google AI Studio, Cloud Run, Model Context Protocol (MCP), AI agents, memory/context, and production-oriented AI development.",
+    skills: ["Google AI Studio", "Cloud Run", "Model Context Protocol (MCP)", "AI Agents", "Memory & Context", "Production AI"],
+    verified: true,
+  },
+
+  // 2. GENERATIVE AI & AGENTIC AI
+  {
+    id: "claude-101",
+    title: "Claude 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    description: "Claude fundamentals, AI assistants, prompt engineering techniques, and developer productivity workflows.",
+    skills: ["Claude", "AI Assistants", "Prompt Engineering", "Developer Productivity", "Anthropic"],
+    verified: true,
+  },
+  {
+    id: "claude-platform-101",
+    title: "Claude Platform 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    description: "Claude platform architecture, API fundamentals, context management, tool usage, and AI application development.",
+    skills: ["Claude Platform", "Anthropic API", "Context Management", "Tool Usage", "AI Application Dev"],
+    verified: true,
+  },
+  {
+    id: "claude-code-101",
+    title: "Claude Code 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    description: "AI-assisted software development, agent workflows, context management, and developer tooling.",
+    skills: ["Claude Code", "AI-Assisted Dev", "Agent Workflows", "Context Management", "Developer Tooling"],
+    verified: true,
+  },
+
+  // 3. MICROSOFT AI & SECURITY
+  {
+    id: "ms-ai-concepts",
+    title: "Introduction to AI Concepts",
+    issuer: "Microsoft Learn",
+    type: "Learning Pathway",
+    category: "MICROSOFT",
+    tier: "primary",
+    description: "Artificial Intelligence, Machine Learning, Generative AI, and Responsible AI fundamentals.",
+    skills: ["Artificial Intelligence", "Machine Learning", "Generative AI", "Responsible AI"],
+    verified: true,
+  },
+  {
+    id: "ms-security-copilot",
+    title: "Enhance Security Operations by using Microsoft Security Copilot",
+    issuer: "Microsoft",
+    type: "Technical Module",
+    category: "MICROSOFT",
+    tier: "primary",
+    description: "AI-assisted security operations, threat analysis, investigation workflows, and incident response.",
+    skills: ["Security Copilot", "Threat Analysis", "Incident Response", "AI Security Ops", "Cybersecurity"],
+    verified: true,
+  },
+  {
+    id: "ms-security-compliance-identity",
+    title: "Introduction to Security, Compliance, and Identity Concepts",
+    issuer: "Microsoft Learn",
+    type: "Learning Pathway",
+    category: "MICROSOFT",
+    tier: "primary",
+    description: "Cybersecurity fundamentals, identity management, compliance, data protection, and cloud security.",
+    skills: ["Cybersecurity", "Identity Management", "Compliance", "Data Protection", "Cloud Security"],
+    verified: true,
+  },
+  {
+    id: "ms-365-copilot",
+    title: "Optimize Business Processes with Microsoft 365 Copilot",
+    issuer: "Microsoft Learn",
+    type: "Learning Module",
+    category: "MICROSOFT",
+    tier: "primary",
+    description: "AI-powered productivity, workflow automation, collaboration, and business-process optimization.",
+    skills: ["Microsoft 365 Copilot", "Workflow Automation", "Productivity", "Business Process Optimization"],
+    verified: true,
+  },
+
+  // 4. CLOUD & DEVOPS
+  {
+    id: "docker-kubernetes",
+    title: "Fundamentals of Docker & Kubernetes",
+    issuer: "Scaler Masterclass",
+    type: "Certificate of Participation",
+    category: "CLOUD / DEVOPS",
+    tier: "secondary",
+    date: "12 May 2026",
+    description: "Docker, containers, Kubernetes, container orchestration, deployment, and cloud-native development.",
+    skills: ["Docker", "Kubernetes", "Containers", "Orchestration", "Cloud-Native Dev"],
+    verified: true,
+  },
+
+  // 5. PROGRAMMING & FULL STACK
+  {
+    id: "udemy-python",
+    title: "Complete Absolute Python Course",
+    issuer: "Udemy",
+    type: "Online Course",
+    category: "FULL STACK",
+    tier: "primary",
+    description: "Python programming fundamentals, problem solving, control structures, functions, and software development.",
+    skills: ["Python", "Problem Solving", "Control Structures", "Functions", "Software Development"],
+    verified: true,
+  },
+  {
+    id: "simplilearn-fullstack",
+    title: "Free Full Stack Developer Course",
+    issuer: "Simplilearn SkillUp",
+    type: "Online Course",
+    category: "FULL STACK",
+    tier: "primary",
+    description: "Frontend development, backend development, REST APIs, database integration, and deployment.",
+    skills: ["Frontend Dev", "Backend Dev", "APIs", "Databases", "Full Stack Deployment"],
+    verified: true,
+  },
+
+  // 6. WORKSHOPS & PROFESSIONAL DEVELOPMENT
+  {
+    id: "webinar-skill-dunia",
+    title: "Career Guidance Webinar",
+    issuer: "Skill Dunia Edutech",
+    type: "Webinar",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    description: "Career planning, professional development, industry awareness, and technical skill development.",
+    skills: ["Career Planning", "Professional Development", "Industry Awareness"],
+    verified: true,
+  },
+  {
+    id: "webinar-guvi-hcl",
+    title: "Data Science, AI & Machine Learning Roadmap Webinar",
+    issuer: "GUVI × HCL",
+    type: "Technical Webinar",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    description: "Industry-oriented exposure to Data Science, Artificial Intelligence, and Machine Learning engineering roadmaps.",
+    skills: ["Data Science", "Machine Learning Roadmap", "AI Career Pathways"],
+    verified: true,
+  },
+  {
+    id: "workshop-pantech",
+    title: "Full Stack Development Workshop",
+    issuer: "Pantech eLearning",
+    type: "Hands-on Workshop",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    description: "Frontend and backend development concepts and practical full-stack software development workflows.",
+    skills: ["Full Stack", "Web Development", "Practical Engineering"],
+    verified: true,
+  },
+  {
+    id: "training-moe-aicte",
+    title: "Innovation Ambassador Training – Foundation Level",
+    issuer: "MoE's Innovation Cell & AICTE",
+    type: "Foundation Training",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    description: "16 sessions / 30 contact hours focused on innovation frameworks, entrepreneurship, and campus innovation.",
+    skills: ["Innovation", "Entrepreneurship", "MoE Innovation Cell", "AICTE"],
+    verified: true,
+  },
+  {
+    id: "event-ipr-india",
+    title: "Intellectual Property Rights (IPR) Event",
+    issuer: "Government of India",
+    type: "National Event",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    description: "Exposure to patents, copyrights, trademarks, industrial design protection, and trade secrets.",
+    skills: ["IPR", "Patents", "Copyrights", "Trademarks", "Trade Secrets"],
+    verified: true,
+  },
+
+  // 7. LEADERSHIP & ACTIVITIES
+  {
+    id: "isp-internshala",
+    title: "Internshala Student Partner (ISP)",
+    issuer: "Internshala",
+    type: "Student Leadership",
+    category: "LEADERSHIP",
+    tier: "activity",
+    description: "Selected as an Internshala Student Partner, contributing to student outreach, internship awareness, and professional networking.",
+    skills: ["Student Outreach", "Internship Awareness", "Professional Networking", "Campus Leadership"],
+    verified: true,
+  },
+  {
+    id: "iic-care-hack",
+    title: "IIC Team Member — CARE HACK '26",
+    issuer: "CARE Institution's Innovation Council",
+    type: "Organizing Team",
+    category: "LEADERSHIP",
+    tier: "activity",
+    description: "Institution's Innovation Council team member contributing to the organization and execution of CARE HACK '26.",
+    skills: ["Event Coordination", "Hackathon Organization", "Team Collaboration", "Innovation Activities"],
+    verified: true,
+  },
+];
+
 export const certifications = [
-  { org: "Google", items: ["5-Day AI Agents: Intensive Vibe Coding with Google"] },
+  {
+    org: "AWS Academy",
+    items: ["Machine Learning Foundations Training Badge"],
+  },
+  {
+    org: "Google / Kaggle",
+    items: ["5-Day AI Agents: Intensive Vibe Coding Course With Google"],
+  },
+  {
+    org: "Anthropic",
+    items: ["Claude 101", "Claude Platform 101", "Claude Code 101"],
+  },
   {
     org: "Microsoft Learn",
     items: [
       "Introduction to AI Concepts",
-      "Optimize Business Processes with Microsoft 365 Copilot",
+      "Enhance Security Operations by using Microsoft Security Copilot",
       "Introduction to Security, Compliance, and Identity Concepts",
-      "Enhance Security Operations using Microsoft Security Copilot",
+      "Optimize Business Processes with Microsoft 365 Copilot",
     ],
   },
-  { org: "Anthropic", items: ["Claude 101", "Claude Code 101", "Claude Platform 101"] },
-  { org: "Scaler", items: ["Fundamentals of Docker & Kubernetes"] },
-  { org: "Udemy", items: ["Complete Absolute Python Course"] },
-  { org: "Simplilearn SkillUp", items: ["Full Stack Developer Course"] },
   {
-    org: "Ministry of Education Innovation Cell (AICTE)",
-    items: ["Innovation Ambassador Foundation Level"],
+    org: "Scaler Masterclass",
+    items: ["Fundamentals of Docker & Kubernetes (12 May 2026)"],
+  },
+  {
+    org: "Udemy",
+    items: ["Complete Absolute Python Course"],
+  },
+  {
+    org: "Simplilearn SkillUp",
+    items: ["Free Full Stack Developer Course"],
   },
 ];
 
 export const hackathons = [
-  {
-    name: "Meta PyTorch OpenEnv Hackathon",
-    role: "Participant",
-    description:
-      "Explored PyTorch environment design and open reinforcement learning architectures for AI models.",
-  },
-  {
-    name: "Hugging Face Hackathon",
-    role: "Participant",
-    description:
-      "Explored AI model development, collaborative innovation, and practical Generative AI workflows while gaining experience with modern AI tools.",
-  },
   {
     name: "Google AI Agents Intensive Program",
     role: "Completed",
@@ -237,7 +480,7 @@ export const hackathons = [
   },
 ];
 
-export const hackathon = hackathons[1];
+export const hackathon = hackathons[0];
 
 export const workshops = [
   {
@@ -245,16 +488,20 @@ export const workshops = [
     name: "Career Guidance Webinar",
   },
   {
+    org: "GUVI × HCL",
+    name: "Data Science, AI & Machine Learning Roadmap Webinar",
+  },
+  {
     org: "Pantech eLearning",
     name: "Full Stack Development Workshop",
   },
   {
-    org: "GUVI × HCL",
-    name: "Data Science, Artificial Intelligence & Machine Learning Roadmap",
+    org: "MoE's Innovation Cell & AICTE",
+    name: "Innovation Ambassador Training – Foundation Level",
   },
   {
     org: "Government of India",
-    name: "Intellectual Property Rights (IPR) Workshop",
+    name: "Intellectual Property Rights (IPR) Event",
   },
 ];
 
