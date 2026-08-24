@@ -200,25 +200,25 @@ function drawHighlightedCode(
       word
     ] = match;
 
-    let color = `rgba(139, 139, 146, ${opacity * 0.55})`; // default muted text
+    let color = `rgba(160, 160, 175, ${opacity * 0.75})`; // default readable text
 
     if (comment) {
-      color = `rgba(85, 85, 92, ${opacity * 0.75})`;
+      color = `rgba(110, 110, 125, ${opacity * 0.85})`;
     } else if (string) {
-      color = `rgba(16, 185, 129, ${opacity * 0.95})`; // green strings
+      color = `rgba(16, 185, 129, ${opacity})`; // green strings
     } else if (keyword) {
-      color = `rgba(239, 91, 63, ${opacity})`; // orange keywords
+      color = `rgba(239, 91, 63, ${opacity})`; // vibrant orange keywords
     } else if (funcName) {
-      color = `rgba(59, 130, 246, ${opacity * 0.9})`; // blue functions
+      color = `rgba(59, 130, 246, ${opacity})`; // blue functions
     } else if (number) {
-      color = `rgba(245, 158, 11, ${opacity * 0.95})`; // amber numbers
+      color = `rgba(245, 158, 11, ${opacity})`; // amber numbers
     } else if (symbol) {
-      color = `rgba(242, 241, 238, ${opacity * 0.75})`; // off-white symbols
+      color = `rgba(242, 241, 238, ${opacity * 0.85})`; // symbols
     } else if (whitespace) {
       currentX += ctx.measureText(whitespace).width;
       continue;
     } else if (word) {
-      color = `rgba(242, 241, 238, ${opacity * 0.8})`; // general variables
+      color = `rgba(242, 241, 238, ${opacity * 0.9})`; // general variables
     }
 
     ctx.fillStyle = color;
@@ -295,7 +295,7 @@ export default function ThreeBackground() {
         driftRangeY: 25,
         phase: 0,
         phaseSpeed: 0.0006,
-        opacity: 0.70,
+        opacity: 0.90,
       },
       {
         id: "ml-training",
@@ -322,7 +322,7 @@ export default function ThreeBackground() {
         driftRangeY: 20,
         phase: Math.PI / 3,
         phaseSpeed: 0.0008,
-        opacity: 0.65,
+        opacity: 0.85,
       },
       {
         id: "docker-logs",
@@ -349,7 +349,7 @@ export default function ThreeBackground() {
         driftRangeY: 30,
         phase: Math.PI * 1.2,
         phaseSpeed: 0.0007,
-        opacity: 0.65,
+        opacity: 0.85,
       }
     ];
 
@@ -576,7 +576,7 @@ export default function ThreeBackground() {
         if (p.x > width + 100) p.x = -100;
         else if (p.x < -100) p.x = width + 100;
 
-        const opacity = 0.04 + (Math.sin(p.phase) + 1) * 0.04;
+        const opacity = 0.40 + (Math.sin(p.phase) + 1) * 0.10;
         ctx.font = `500 ${p.size}px "JetBrains Mono", "Fira Code", monospace`;
         drawHighlightedCode(ctx, p.content, p.x, p.y, opacity);
       });

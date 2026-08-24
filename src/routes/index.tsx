@@ -49,7 +49,7 @@ function Index() {
             <ThreeBackground />
           </Suspense>
           {/* Subtle background dimming overlay for crisp text readability */}
-          <div className="absolute inset-0 bg-black/40 backdrop-brightness-90 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/20 backdrop-brightness-95 pointer-events-none" />
         </div>
       )}
 
