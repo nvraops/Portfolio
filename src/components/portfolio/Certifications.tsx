@@ -181,35 +181,50 @@ const CATEGORIES = [
 
 type CategoryFilter = (typeof CATEGORIES)[number];
 
+function formatDisplayDate(item: LearningCredential) {
+  if (item.date) return item.date;
+  if (!item.completedDate) return undefined;
+  const [year, month, day] = item.completedDate.split("-").map(Number);
+  if (!year || !month) return undefined;
+  const dateObj = new Date(year, month - 1, day || 1);
+  return dateObj.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
 export function Certifications() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeModalItem, setActiveModalItem] = useState<LearningCredential | null>(null);
 
-  // Compute filtered items
+  // Compute filtered items and ensure they are always sorted by date of done (newest first)
   const filteredItems = useMemo(() => {
-    return learningCredentials.filter((item) => {
-      // Category check
-      const matchesCategory =
-        selectedCategory === "ALL"
-          ? true
-          : selectedCategory === "AI / ML"
-          ? item.category === "AI / ML" || (item.category === "AGENTIC AI" && item.id.includes("agents"))
-          : item.category === selectedCategory;
+    return learningCredentials
+      .filter((item) => {
+        // Category check
+        const matchesCategory =
+          selectedCategory === "ALL"
+            ? true
+            : selectedCategory === "AI / ML"
+            ? item.category === "AI / ML" || (item.category === "AGENTIC AI" && item.id.includes("agents"))
+            : item.category === selectedCategory;
 
-      // Search check
-      const q = searchQuery.trim().toLowerCase();
-      if (!q) return matchesCategory;
+        // Search check
+        const q = searchQuery.trim().toLowerCase();
+        if (!q) return matchesCategory;
 
-      const matchesSearch =
-        item.title.toLowerCase().includes(q) ||
-        item.issuer.toLowerCase().includes(q) ||
-        item.description.toLowerCase().includes(q) ||
-        item.type.toLowerCase().includes(q) ||
-        item.skills.some((s) => s.toLowerCase().includes(q));
+        const matchesSearch =
+          item.title.toLowerCase().includes(q) ||
+          item.issuer.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
+          item.type.toLowerCase().includes(q) ||
+          item.skills.some((s) => s.toLowerCase().includes(q));
 
-      return matchesCategory && matchesSearch;
-    });
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => {
+        const timeA = new Date(a.completedDate).getTime();
+        const timeB = new Date(b.completedDate).getTime();
+        return timeB - timeA; // Descending: newest completed date first
+      });
   }, [selectedCategory, searchQuery]);
 
   // Knowledge breakdown stats without fabricating fake statistics
@@ -366,12 +381,18 @@ export function Certifications() {
               )}
             </div>
 
-            {/* Live Count Indicator */}
-            <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground self-start md:self-center">
-              <span>Showing:</span>
-              <span className="font-bold text-cyan">
-                {filteredItems.length} {filteredItems.length === 1 ? "record" : "records"}
-              </span>
+            {/* Live Count & Sort Indicator */}
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground self-start md:self-center">
+              <div className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-cyan/90 bg-cyan/10 border border-cyan/30 rounded-lg px-2.5 py-1 shadow-xs">
+                <Calendar size={11} className="text-cyan" />
+                <span>Sorted by Date Done (Latest First ↓)</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-xs">
+                <span>Showing:</span>
+                <span className="font-bold text-cyan">
+                  {filteredItems.length} {filteredItems.length === 1 ? "record" : "records"}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -433,6 +454,7 @@ export function Certifications() {
                 {filteredItems.map((item, idx) => {
                   const isPrimary = item.tier === "primary";
                   const isActivity = item.tier === "activity";
+                  const displayDate = formatDisplayDate(item);
 
                   return (
                     <motion.div
@@ -507,11 +529,11 @@ export function Certifications() {
                           {item.title}
                         </h4>
 
-                        {/* Verified Date (Only rendered if verified date exists!) */}
-                        {item.date && (
-                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-muted-foreground/80 mb-2">
-                            <Calendar size={11} className="text-cyan/70" />
-                            <span>{item.date}</span>
+                        {/* Completion Date */}
+                        {displayDate && (
+                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-cyan/80 mb-2">
+                            <Calendar size={11} className="text-cyan/80" />
+                            <span>{displayDate}</span>
                           </div>
                         )}
 
@@ -562,7 +584,7 @@ export function Certifications() {
         <div className="border-t border-white/10 px-5 py-3 bg-white/[0.02] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] font-mono text-muted-foreground">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>AI Engineer Knowledge Repository • Continuous Professional Upskilling</span>
+            <span>AI Engineer Knowledge Repository • Chronologically Ordered by Date of Completion</span>
           </div>
           <div>All records verified through official learning pathways &amp; programs</div>
         </div>
@@ -642,12 +664,12 @@ export function Certifications() {
                     <span className="text-[10px] text-muted-foreground block">DOMAIN CATEGORY</span>
                     <span className="text-cyan font-bold mt-0.5 block">{activeModalItem.category}</span>
                   </div>
-                  {activeModalItem.date && (
+                  {formatDisplayDate(activeModalItem) && (
                     <div className="col-span-2 p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
                       <Calendar size={14} className="text-cyan" />
                       <div>
-                        <span className="text-[10px] text-muted-foreground block">VERIFIED DATE</span>
-                        <span className="text-white font-bold">{activeModalItem.date}</span>
+                        <span className="text-[10px] text-muted-foreground block">COMPLETION DATE</span>
+                        <span className="text-white font-bold">{formatDisplayDate(activeModalItem)}</span>
                       </div>
                     </div>
                   )}

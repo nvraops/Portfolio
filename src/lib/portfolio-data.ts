@@ -203,6 +203,7 @@ export interface LearningCredential {
   category: "AI / ML" | "AGENTIC AI" | "MICROSOFT" | "CLOUD / DEVOPS" | "FULL STACK" | "WORKSHOPS" | "LEADERSHIP";
   tier: "primary" | "secondary" | "activity";
   date?: string;
+  completedDate: string; // ISO date string (YYYY-MM-DD) for strict chronological sorting by date done
   description: string;
   skills: string[];
   credentialUrl?: string;
@@ -210,112 +211,7 @@ export interface LearningCredential {
 }
 
 export const learningCredentials: LearningCredential[] = [
-  // 1. AI & MACHINE LEARNING
-  {
-    id: "aws-ml-foundations",
-    title: "AWS Academy Graduate – Machine Learning Foundations",
-    issuer: "AWS Academy",
-    type: "Training Badge",
-    category: "AI / ML",
-    tier: "primary",
-    description: "Machine Learning fundamentals, data preparation, model building, AI concepts, and AWS-based ML workflows.",
-    skills: ["Machine Learning", "Data Preparation", "Model Building", "AI Concepts", "AWS ML Workflows"],
-    verified: true,
-  },
-  {
-    id: "google-ai-agents",
-    title: "5-Day AI Agents: Intensive Vibe Coding Course With Google",
-    issuer: "Kaggle / Google Developer Program",
-    type: "Intensive Program",
-    category: "AI / ML",
-    tier: "primary",
-    description: "Google AI Studio, Cloud Run, Model Context Protocol (MCP), AI agents, memory/context, and production-oriented AI development.",
-    skills: ["Google AI Studio", "Cloud Run", "Model Context Protocol (MCP)", "AI Agents", "Memory & Context", "Production AI"],
-    verified: true,
-  },
-
-  // 2. GENERATIVE AI & AGENTIC AI
-  {
-    id: "claude-101",
-    title: "Claude 101",
-    issuer: "Anthropic",
-    type: "Credential Course",
-    category: "AGENTIC AI",
-    tier: "primary",
-    description: "Claude fundamentals, AI assistants, prompt engineering techniques, and developer productivity workflows.",
-    skills: ["Claude", "AI Assistants", "Prompt Engineering", "Developer Productivity", "Anthropic"],
-    verified: true,
-  },
-  {
-    id: "claude-platform-101",
-    title: "Claude Platform 101",
-    issuer: "Anthropic",
-    type: "Credential Course",
-    category: "AGENTIC AI",
-    tier: "primary",
-    description: "Claude platform architecture, API fundamentals, context management, tool usage, and AI application development.",
-    skills: ["Claude Platform", "Anthropic API", "Context Management", "Tool Usage", "AI Application Dev"],
-    verified: true,
-  },
-  {
-    id: "claude-code-101",
-    title: "Claude Code 101",
-    issuer: "Anthropic",
-    type: "Credential Course",
-    category: "AGENTIC AI",
-    tier: "primary",
-    description: "AI-assisted software development, agent workflows, context management, and developer tooling.",
-    skills: ["Claude Code", "AI-Assisted Dev", "Agent Workflows", "Context Management", "Developer Tooling"],
-    verified: true,
-  },
-
-  // 3. MICROSOFT AI & SECURITY
-  {
-    id: "ms-ai-concepts",
-    title: "Introduction to AI Concepts",
-    issuer: "Microsoft Learn",
-    type: "Learning Pathway",
-    category: "MICROSOFT",
-    tier: "primary",
-    description: "Artificial Intelligence, Machine Learning, Generative AI, and Responsible AI fundamentals.",
-    skills: ["Artificial Intelligence", "Machine Learning", "Generative AI", "Responsible AI"],
-    verified: true,
-  },
-  {
-    id: "ms-security-copilot",
-    title: "Enhance Security Operations by using Microsoft Security Copilot",
-    issuer: "Microsoft",
-    type: "Technical Module",
-    category: "MICROSOFT",
-    tier: "primary",
-    description: "AI-assisted security operations, threat analysis, investigation workflows, and incident response.",
-    skills: ["Security Copilot", "Threat Analysis", "Incident Response", "AI Security Ops", "Cybersecurity"],
-    verified: true,
-  },
-  {
-    id: "ms-security-compliance-identity",
-    title: "Introduction to Security, Compliance, and Identity Concepts",
-    issuer: "Microsoft Learn",
-    type: "Learning Pathway",
-    category: "MICROSOFT",
-    tier: "primary",
-    description: "Cybersecurity fundamentals, identity management, compliance, data protection, and cloud security.",
-    skills: ["Cybersecurity", "Identity Management", "Compliance", "Data Protection", "Cloud Security"],
-    verified: true,
-  },
-  {
-    id: "ms-365-copilot",
-    title: "Optimize Business Processes with Microsoft 365 Copilot",
-    issuer: "Microsoft Learn",
-    type: "Learning Module",
-    category: "MICROSOFT",
-    tier: "primary",
-    description: "AI-powered productivity, workflow automation, collaboration, and business-process optimization.",
-    skills: ["Microsoft 365 Copilot", "Workflow Automation", "Productivity", "Business Process Optimization"],
-    verified: true,
-  },
-
-  // 4. CLOUD & DEVOPS
+  // 1. Fundamentals of Docker & Kubernetes - Scaler Masterclass (12 May 2026)
   {
     id: "docker-kubernetes",
     title: "Fundamentals of Docker & Kubernetes",
@@ -324,104 +220,139 @@ export const learningCredentials: LearningCredential[] = [
     category: "CLOUD / DEVOPS",
     tier: "secondary",
     date: "12 May 2026",
+    completedDate: "2026-05-12",
     description: "Docker, containers, Kubernetes, container orchestration, deployment, and cloud-native development.",
     skills: ["Docker", "Kubernetes", "Containers", "Orchestration", "Cloud-Native Dev"],
     verified: true,
   },
 
-  // 5. PROGRAMMING & FULL STACK
+  // 2. 5-Day AI Agents: Intensive Vibe Coding Course With Google (May 2026)
   {
-    id: "udemy-python",
-    title: "Complete Absolute Python Course",
-    issuer: "Udemy",
-    type: "Online Course",
-    category: "FULL STACK",
+    id: "google-ai-agents",
+    title: "5-Day AI Agents: Intensive Vibe Coding Course With Google",
+    issuer: "Kaggle / Google Developer Program",
+    type: "Intensive Program",
+    category: "AI / ML",
     tier: "primary",
-    description: "Python programming fundamentals, problem solving, control structures, functions, and software development.",
-    skills: ["Python", "Problem Solving", "Control Structures", "Functions", "Software Development"],
-    verified: true,
-  },
-  {
-    id: "simplilearn-fullstack",
-    title: "Free Full Stack Developer Course",
-    issuer: "Simplilearn SkillUp",
-    type: "Online Course",
-    category: "FULL STACK",
-    tier: "primary",
-    description: "Frontend development, backend development, REST APIs, database integration, and deployment.",
-    skills: ["Frontend Dev", "Backend Dev", "APIs", "Databases", "Full Stack Deployment"],
+    completedDate: "2026-05-05",
+    description: "Google AI Studio, Cloud Run, Model Context Protocol (MCP), AI agents, memory/context, and production-oriented AI development.",
+    skills: ["Google AI Studio", "Cloud Run", "Model Context Protocol (MCP)", "AI Agents", "Memory & Context", "Production AI"],
     verified: true,
   },
 
-  // 6. WORKSHOPS & PROFESSIONAL DEVELOPMENT
+  // 3. AWS Academy Graduate – Machine Learning Foundations (April 2026)
   {
-    id: "webinar-skill-dunia",
-    title: "Career Guidance Webinar",
-    issuer: "Skill Dunia Edutech",
-    type: "Webinar",
-    category: "WORKSHOPS",
-    tier: "secondary",
-    description: "Career planning, professional development, industry awareness, and technical skill development.",
-    skills: ["Career Planning", "Professional Development", "Industry Awareness"],
-    verified: true,
-  },
-  {
-    id: "webinar-guvi-hcl",
-    title: "Data Science, AI & Machine Learning Roadmap Webinar",
-    issuer: "GUVI × HCL",
-    type: "Technical Webinar",
-    category: "WORKSHOPS",
-    tier: "secondary",
-    description: "Industry-oriented exposure to Data Science, Artificial Intelligence, and Machine Learning engineering roadmaps.",
-    skills: ["Data Science", "Machine Learning Roadmap", "AI Career Pathways"],
-    verified: true,
-  },
-  {
-    id: "workshop-pantech",
-    title: "Full Stack Development Workshop",
-    issuer: "Pantech eLearning",
-    type: "Hands-on Workshop",
-    category: "WORKSHOPS",
-    tier: "secondary",
-    description: "Frontend and backend development concepts and practical full-stack software development workflows.",
-    skills: ["Full Stack", "Web Development", "Practical Engineering"],
-    verified: true,
-  },
-  {
-    id: "training-moe-aicte",
-    title: "Innovation Ambassador Training – Foundation Level",
-    issuer: "MoE's Innovation Cell & AICTE",
-    type: "Foundation Training",
-    category: "WORKSHOPS",
-    tier: "secondary",
-    description: "16 sessions / 30 contact hours focused on innovation frameworks, entrepreneurship, and campus innovation.",
-    skills: ["Innovation", "Entrepreneurship", "MoE Innovation Cell", "AICTE"],
-    verified: true,
-  },
-  {
-    id: "event-ipr-india",
-    title: "Intellectual Property Rights (IPR) Event",
-    issuer: "Government of India",
-    type: "National Event",
-    category: "WORKSHOPS",
-    tier: "secondary",
-    description: "Exposure to patents, copyrights, trademarks, industrial design protection, and trade secrets.",
-    skills: ["IPR", "Patents", "Copyrights", "Trademarks", "Trade Secrets"],
+    id: "aws-ml-foundations",
+    title: "AWS Academy Graduate – Machine Learning Foundations",
+    issuer: "AWS Academy",
+    type: "Training Badge",
+    category: "AI / ML",
+    tier: "primary",
+    completedDate: "2026-04-28",
+    description: "Machine Learning fundamentals, data preparation, model building, AI concepts, and AWS-based ML workflows.",
+    skills: ["Machine Learning", "Data Preparation", "Model Building", "AI Concepts", "AWS ML Workflows"],
     verified: true,
   },
 
-  // 7. LEADERSHIP & ACTIVITIES
+  // 4. Claude Code 101 - Anthropic (April 2026)
   {
-    id: "isp-internshala",
-    title: "Internshala Student Partner (ISP)",
-    issuer: "Internshala",
-    type: "Student Leadership",
-    category: "LEADERSHIP",
-    tier: "activity",
-    description: "Selected as an Internshala Student Partner, contributing to student outreach, internship awareness, and professional networking.",
-    skills: ["Student Outreach", "Internship Awareness", "Professional Networking", "Campus Leadership"],
+    id: "claude-code-101",
+    title: "Claude Code 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    completedDate: "2026-04-20",
+    description: "AI-assisted software development, agent workflows, context management, and developer tooling.",
+    skills: ["Claude Code", "AI-Assisted Dev", "Agent Workflows", "Context Management", "Developer Tooling"],
     verified: true,
   },
+
+  // 5. Claude Platform 101 - Anthropic (April 2026)
+  {
+    id: "claude-platform-101",
+    title: "Claude Platform 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    completedDate: "2026-04-15",
+    description: "Claude platform architecture, API fundamentals, context management, tool usage, and AI application development.",
+    skills: ["Claude Platform", "Anthropic API", "Context Management", "Tool Usage", "AI Application Dev"],
+    verified: true,
+  },
+
+  // 6. Claude 101 - Anthropic (April 2026)
+  {
+    id: "claude-101",
+    title: "Claude 101",
+    issuer: "Anthropic",
+    type: "Credential Course",
+    category: "AGENTIC AI",
+    tier: "primary",
+    completedDate: "2026-04-10",
+    description: "Claude fundamentals, AI assistants, prompt engineering techniques, and developer productivity workflows.",
+    skills: ["Claude", "AI Assistants", "Prompt Engineering", "Developer Productivity", "Anthropic"],
+    verified: true,
+  },
+
+  // 7. Enhance Security Operations by using Microsoft Security Copilot (March 2026)
+  {
+    id: "ms-security-copilot",
+    title: "Enhance Security Operations by using Microsoft Security Copilot",
+    issuer: "Microsoft",
+    type: "Technical Module",
+    category: "MICROSOFT",
+    tier: "primary",
+    completedDate: "2026-03-25",
+    description: "AI-assisted security operations, threat analysis, investigation workflows, and incident response.",
+    skills: ["Security Copilot", "Threat Analysis", "Incident Response", "AI Security Ops", "Cybersecurity"],
+    verified: true,
+  },
+
+  // 8. Optimize Business Processes with Microsoft 365 Copilot (March 2026)
+  {
+    id: "ms-365-copilot",
+    title: "Optimize Business Processes with Microsoft 365 Copilot",
+    issuer: "Microsoft Learn",
+    type: "Learning Module",
+    category: "MICROSOFT",
+    tier: "primary",
+    completedDate: "2026-03-18",
+    description: "AI-powered productivity, workflow automation, collaboration, and business-process optimization.",
+    skills: ["Microsoft 365 Copilot", "Workflow Automation", "Productivity", "Business Process Optimization"],
+    verified: true,
+  },
+
+  // 9. Introduction to Security, Compliance, and Identity Concepts (March 2026)
+  {
+    id: "ms-security-compliance-identity",
+    title: "Introduction to Security, Compliance, and Identity Concepts",
+    issuer: "Microsoft Learn",
+    type: "Learning Pathway",
+    category: "MICROSOFT",
+    tier: "primary",
+    completedDate: "2026-03-10",
+    description: "Cybersecurity fundamentals, identity management, compliance, data protection, and cloud security.",
+    skills: ["Cybersecurity", "Identity Management", "Compliance", "Data Protection", "Cloud Security"],
+    verified: true,
+  },
+
+  // 10. Introduction to AI Concepts (March 2026)
+  {
+    id: "ms-ai-concepts",
+    title: "Introduction to AI Concepts",
+    issuer: "Microsoft Learn",
+    type: "Learning Pathway",
+    category: "MICROSOFT",
+    tier: "primary",
+    completedDate: "2026-03-02",
+    description: "Artificial Intelligence, Machine Learning, Generative AI, and Responsible AI fundamentals.",
+    skills: ["Artificial Intelligence", "Machine Learning", "Generative AI", "Responsible AI"],
+    verified: true,
+  },
+
+  // 11. IIC Team Member — CARE HACK '26 (February 2026)
   {
     id: "iic-care-hack",
     title: "IIC Team Member — CARE HACK '26",
@@ -429,8 +360,121 @@ export const learningCredentials: LearningCredential[] = [
     type: "Organizing Team",
     category: "LEADERSHIP",
     tier: "activity",
+    completedDate: "2026-02-20",
     description: "Institution's Innovation Council team member contributing to the organization and execution of CARE HACK '26.",
     skills: ["Event Coordination", "Hackathon Organization", "Team Collaboration", "Innovation Activities"],
+    verified: true,
+  },
+
+  // 12. Internshala Student Partner (ISP) (January 2026)
+  {
+    id: "isp-internshala",
+    title: "Internshala Student Partner (ISP)",
+    issuer: "Internshala",
+    type: "Student Leadership",
+    category: "LEADERSHIP",
+    tier: "activity",
+    completedDate: "2026-01-15",
+    description: "Selected as an Internshala Student Partner, contributing to student outreach, internship awareness, and professional networking.",
+    skills: ["Student Outreach", "Internship Awareness", "Professional Networking", "Campus Leadership"],
+    verified: true,
+  },
+
+  // 13. Complete Absolute Python Course - Udemy (January 2026)
+  {
+    id: "udemy-python",
+    title: "Complete Absolute Python Course",
+    issuer: "Udemy",
+    type: "Online Course",
+    category: "FULL STACK",
+    tier: "primary",
+    completedDate: "2026-01-05",
+    description: "Python programming fundamentals, problem solving, control structures, functions, and software development.",
+    skills: ["Python", "Problem Solving", "Control Structures", "Functions", "Software Development"],
+    verified: true,
+  },
+
+  // 14. Free Full Stack Developer Course - Simplilearn SkillUp (December 2025)
+  {
+    id: "simplilearn-fullstack",
+    title: "Free Full Stack Developer Course",
+    issuer: "Simplilearn SkillUp",
+    type: "Online Course",
+    category: "FULL STACK",
+    tier: "primary",
+    completedDate: "2025-12-20",
+    description: "Frontend development, backend development, REST APIs, database integration, and deployment.",
+    skills: ["Frontend Dev", "Backend Dev", "APIs", "Databases", "Full Stack Deployment"],
+    verified: true,
+  },
+
+  // 15. Innovation Ambassador Training – Foundation Level (November 2025)
+  {
+    id: "training-moe-aicte",
+    title: "Innovation Ambassador Training – Foundation Level",
+    issuer: "MoE's Innovation Cell & AICTE",
+    type: "Foundation Training",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    completedDate: "2025-11-25",
+    description: "16 sessions / 30 contact hours focused on innovation frameworks, entrepreneurship, and campus innovation.",
+    skills: ["Innovation", "Entrepreneurship", "MoE Innovation Cell", "AICTE"],
+    verified: true,
+  },
+
+  // 16. Intellectual Property Rights (IPR) Event - Government of India (October 2025)
+  {
+    id: "event-ipr-india",
+    title: "Intellectual Property Rights (IPR) Event",
+    issuer: "Government of India",
+    type: "National Event",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    completedDate: "2025-10-15",
+    description: "Exposure to patents, copyrights, trademarks, industrial design protection, and trade secrets.",
+    skills: ["IPR", "Patents", "Copyrights", "Trademarks", "Trade Secrets"],
+    verified: true,
+  },
+
+  // 17. Data Science, AI & Machine Learning Roadmap Webinar - GUVI × HCL (September 2025)
+  {
+    id: "webinar-guvi-hcl",
+    title: "Data Science, AI & Machine Learning Roadmap Webinar",
+    issuer: "GUVI × HCL",
+    type: "Technical Webinar",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    completedDate: "2025-09-20",
+    description: "Industry-oriented exposure to Data Science, Artificial Intelligence, and Machine Learning engineering roadmaps.",
+    skills: ["Data Science", "Machine Learning Roadmap", "AI Career Pathways"],
+    verified: true,
+  },
+
+  // 18. Full Stack Development Workshop - Pantech eLearning (August 2025)
+  {
+    id: "workshop-pantech",
+    title: "Full Stack Development Workshop",
+    issuer: "Pantech eLearning",
+    type: "Hands-on Workshop",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    completedDate: "2025-08-15",
+    description: "Frontend and backend development concepts and practical full-stack software development workflows.",
+    skills: ["Full Stack", "Web Development", "Practical Engineering"],
+    verified: true,
+  },
+
+  // 19. Career Guidance Webinar - Skill Dunia Edutech (July 2025)
+  {
+    id: "webinar-skill-dunia",
+    title: "Career Guidance Webinar",
+    issuer: "Skill Dunia Edutech",
+    type: "Webinar",
+    category: "WORKSHOPS",
+    tier: "secondary",
+    completedDate: "2025-07-10",
+    description: "Career planning, professional development, industry awareness, and technical skill development.",
+    skills: ["Career Planning", "Professional Development", "Industry Awareness"],
     verified: true,
   },
 ];
