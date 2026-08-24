@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Github, Linkedin, Mail, Instagram, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, Sparkles, FileText, Download } from "lucide-react";
 import { profile, stats, education, experience, certifications, mailtoUrl } from "@/lib/portfolio-data";
 import profileImg from "@/assets/profile.jpg";
 
@@ -160,6 +160,14 @@ export function Hero() {
               
               {/* Actions Row */}
               <div className="flex flex-wrap justify-center gap-3 mt-auto">
+                <a
+                  href="/CV_Nikhill_Vasudeva_Rao.pdf"
+                  download="CV_Nikhill_Vasudeva_Rao.pdf"
+                  className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl border border-primary/40 bg-primary/20 text-[10px] font-bold tracking-wider uppercase text-primary hover:bg-primary/30 hover:border-primary/60 transition-all hover:scale-105 active:scale-95 shadow-md shadow-primary/10"
+                >
+                  <FileText size={14} /> RESUME / CV <Download size={12} />
+                </a>
+
                 <a
                   href={profile.github}
                   target="_blank"
