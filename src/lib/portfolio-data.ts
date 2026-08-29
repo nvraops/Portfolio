@@ -211,7 +211,49 @@ export interface LearningCredential {
 }
 
 export const learningCredentials: LearningCredential[] = [
-  // 1. Fundamentals of Docker & Kubernetes - Scaler Masterclass (12 May 2026)
+  // 1. Tata Imagination Challenge 2026 (May 2026)
+  {
+    id: "tata-imagination-challenge-2026",
+    title: "Campus Ambassador — Tata Imagination Challenge 2026",
+    issuer: "Tata",
+    type: "Campus Ambassador",
+    category: "LEADERSHIP",
+    tier: "primary",
+    completedDate: "2026-05-28",
+    description: "Selected as a Campus Ambassador for the Tata Imagination Challenge 2026, focusing on connecting with students, spreading awareness about the challenge, encouraging participation, and promoting innovation, creativity, and leadership in the campus community.",
+    skills: ["Leadership", "Student Outreach", "Community Engagement", "Innovation", "Communication", "Creativity", "Campus Engagement", "Networking"],
+    verified: true,
+  },
+
+  // 2. Adobe University Hackathon 2026 (May 2026)
+  {
+    id: "adobe-university-hackathon-2026",
+    title: "Advanced to Next Round — Adobe University Hackathon 2026",
+    issuer: "Adobe",
+    type: "Next Round Qualified",
+    category: "LEADERSHIP",
+    tier: "primary",
+    completedDate: "2026-05-25",
+    description: "Successfully advanced to the next round of the Adobe University Hackathon 2026 after clearing the first round, demonstrating problem-solving, analytical thinking, technical aptitude, creativity, and software development skills under pressure.",
+    skills: ["Problem Solving", "Analytical Thinking", "Technical Aptitude", "Innovation", "Creativity", "Competitive Programming", "Software Development", "Hackathon"],
+    verified: true,
+  },
+
+  // 3. Google Developer Program - Activate Cloud Shell in Cloud Documentation (May 2026)
+  {
+    id: "google-cloud-shell",
+    title: "Activate Cloud Shell in Cloud Documentation",
+    issuer: "Google for Developers",
+    type: "Activity Badge",
+    category: "CLOUD / DEVOPS",
+    tier: "activity",
+    completedDate: "2026-05-18",
+    description: "Earned a Google Developer Program activity badge for completing the Cloud Shell learning activity, gaining hands-on exposure to Google Cloud Shell, cloud-based developer environments, and cloud computing tools.",
+    skills: ["Google Cloud", "Cloud Shell", "Cloud Development", "Developer Tools", "Cloud Computing", "Command Line", "Cloud Environment"],
+    verified: true,
+  },
+
+  // 4. Fundamentals of Docker & Kubernetes - Scaler Masterclass (12 May 2026)
   {
     id: "docker-kubernetes",
     title: "Fundamentals of Docker & Kubernetes",
@@ -226,7 +268,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 2. 5-Day AI Agents: Intensive Vibe Coding Course With Google (May 2026)
+  // 5. 5-Day AI Agents: Intensive Vibe Coding Course With Google (May 2026)
   {
     id: "google-ai-agents",
     title: "5-Day AI Agents: Intensive Vibe Coding Course With Google",
@@ -240,7 +282,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 3. AWS Academy Graduate – Machine Learning Foundations (April 2026)
+  // 6. AWS Academy Graduate – Machine Learning Foundations (April 2026)
   {
     id: "aws-ml-foundations",
     title: "AWS Academy Graduate – Machine Learning Foundations",
@@ -254,7 +296,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 4. Claude Code 101 - Anthropic (April 2026)
+  // 7. Claude Code 101 - Anthropic (April 2026)
   {
     id: "claude-code-101",
     title: "Claude Code 101",
@@ -268,7 +310,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 5. Claude Platform 101 - Anthropic (April 2026)
+  // 8. Claude Platform 101 - Anthropic (April 2026)
   {
     id: "claude-platform-101",
     title: "Claude Platform 101",
@@ -282,7 +324,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 6. Claude 101 - Anthropic (April 2026)
+  // 9. Claude 101 - Anthropic (April 2026)
   {
     id: "claude-101",
     title: "Claude 101",
@@ -296,7 +338,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 7. Enhance Security Operations by using Microsoft Security Copilot (March 2026)
+  // 10. Enhance Security Operations by using Microsoft Security Copilot (March 2026)
   {
     id: "ms-security-copilot",
     title: "Enhance Security Operations by using Microsoft Security Copilot",
@@ -310,7 +352,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 8. Optimize Business Processes with Microsoft 365 Copilot (March 2026)
+  // 11. Optimize Business Processes with Microsoft 365 Copilot (March 2026)
   {
     id: "ms-365-copilot",
     title: "Optimize Business Processes with Microsoft 365 Copilot",
@@ -324,7 +366,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 9. Introduction to Security, Compliance, and Identity Concepts (March 2026)
+  // 12. Introduction to Security, Compliance, and Identity Concepts (March 2026)
   {
     id: "ms-security-compliance-identity",
     title: "Introduction to Security, Compliance, and Identity Concepts",
@@ -338,7 +380,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 10. Introduction to AI Concepts (March 2026)
+  // 13. Introduction to AI Concepts (March 2026)
   {
     id: "ms-ai-concepts",
     title: "Introduction to AI Concepts",
@@ -352,7 +394,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 11. IIC Team Member — CARE HACK '26 (February 2026)
+  // 14. IIC Team Member — CARE HACK '26 (February 2026)
   {
     id: "iic-care-hack",
     title: "IIC Team Member — CARE HACK '26",
@@ -366,7 +408,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 12. Internshala Student Partner (ISP) (January 2026)
+  // 15. Internshala Student Partner (ISP) (January 2026)
   {
     id: "isp-internshala",
     title: "Internshala Student Partner (ISP)",
@@ -380,7 +422,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 13. Complete Absolute Python Course - Udemy (January 2026)
+  // 16. Complete Absolute Python Course - Udemy (January 2026)
   {
     id: "udemy-python",
     title: "Complete Absolute Python Course",
@@ -394,7 +436,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 14. Free Full Stack Developer Course - Simplilearn SkillUp (December 2025)
+  // 17. Free Full Stack Developer Course - Simplilearn SkillUp (December 2025)
   {
     id: "simplilearn-fullstack",
     title: "Free Full Stack Developer Course",
@@ -408,7 +450,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 15. Innovation Ambassador Training – Foundation Level (November 2025)
+  // 18. Innovation Ambassador Training – Foundation Level (November 2025)
   {
     id: "training-moe-aicte",
     title: "Innovation Ambassador Training – Foundation Level",
@@ -422,7 +464,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 16. Intellectual Property Rights (IPR) Event - Government of India (October 2025)
+  // 19. Intellectual Property Rights (IPR) Event - Government of India (October 2025)
   {
     id: "event-ipr-india",
     title: "Intellectual Property Rights (IPR) Event",
@@ -436,7 +478,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 17. Data Science, AI & Machine Learning Roadmap Webinar - GUVI × HCL (September 2025)
+  // 20. Data Science, AI & Machine Learning Roadmap Webinar - GUVI × HCL (September 2025)
   {
     id: "webinar-guvi-hcl",
     title: "Data Science, AI & Machine Learning Roadmap Webinar",
@@ -450,7 +492,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 18. Full Stack Development Workshop - Pantech eLearning (August 2025)
+  // 21. Full Stack Development Workshop - Pantech eLearning (August 2025)
   {
     id: "workshop-pantech",
     title: "Full Stack Development Workshop",
@@ -464,7 +506,7 @@ export const learningCredentials: LearningCredential[] = [
     verified: true,
   },
 
-  // 19. Career Guidance Webinar - Skill Dunia Edutech (July 2025)
+  // 22. Career Guidance Webinar - Skill Dunia Edutech (July 2025)
   {
     id: "webinar-skill-dunia",
     title: "Career Guidance Webinar",
@@ -480,6 +522,12 @@ export const learningCredentials: LearningCredential[] = [
 ];
 
 export const certifications = [
+  {
+    org: "Google for Developers",
+    items: [
+      "Activate Cloud Shell in Cloud Documentation (Google Developer Program Activity Badge)",
+    ],
+  },
   {
     org: "AWS Academy",
     items: ["Machine Learning Foundations Training Badge"],
@@ -517,6 +565,12 @@ export const certifications = [
 
 export const hackathons = [
   {
+    name: "Adobe University Hackathon 2026",
+    role: "Advanced to Next Round",
+    description:
+      "Successfully cleared the first round and advanced to the next round, demonstrating problem-solving, analytical thinking, technical aptitude, creativity, and software development skills under pressure.",
+  },
+  {
     name: "Google AI Agents Intensive Program",
     role: "Completed",
     description:
@@ -550,6 +604,9 @@ export const workshops = [
 ];
 
 export const achievements = [
+  "Advanced to the Next Round of the Adobe University Hackathon 2026 after successfully clearing the first round.",
+  "Selected as Campus Ambassador for the Tata Imagination Challenge 2026, driving student outreach, innovation awareness, and campus engagement.",
+  "Earned Google Developer Program activity badge for Cloud Shell in Google Cloud documentation.",
   "Successfully completed multiple Microsoft AI learning pathways.",
   "Completed Anthropic AI Developer learning programs.",
   "Completed Google's AI Agents Intensive Program.",

@@ -91,6 +91,26 @@ function OrgLogo({ issuer, className = "w-5 h-5" }: { issuer: string; className?
     );
   }
 
+  // Tata
+  if (norm.includes("tata")) {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="5" fill="#005696" />
+        <path d="M6 7.5h12M12 7.5v9.5" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // Adobe
+  if (norm.includes("adobe")) {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="5" fill="#FA0F00" />
+        <path d="M14.2 6.5h3.8l-2.8 11h-2.8l1.8-11zm-4.4 0H6l2.8 11h2.8l-1.8-11zm2.2 4.5l1.9 6.5h-2.1l-.7-2.6H8.5l2.2-3.9z" fill="#ffffff" />
+      </svg>
+    );
+  }
+
   // Scaler
   if (norm.includes("scaler")) {
     return (
@@ -292,39 +312,39 @@ export function Certifications() {
           {/* Segmented Distribution Bar */}
           <div className="h-2 w-full rounded-full bg-white/5 overflow-hidden flex gap-0.5 p-0.5">
             <div
-              style={{ width: `${(2 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["AI / ML"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full rounded-l-full bg-cyan-400"
-              title="AI & Machine Learning (2)"
+              title={`AI & Machine Learning (${categoryCounts["AI / ML"] || 0})`}
             />
             <div
-              style={{ width: `${(3 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["AGENTIC AI"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full bg-orange-500"
-              title="Generative & Agentic AI (3)"
+              title={`Generative & Agentic AI (${categoryCounts["AGENTIC AI"] || 0})`}
             />
             <div
-              style={{ width: `${(4 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["MICROSOFT"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full bg-blue-500"
-              title="Microsoft AI & Security (4)"
+              title={`Microsoft AI & Security (${categoryCounts["MICROSOFT"] || 0})`}
             />
             <div
-              style={{ width: `${(1 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["CLOUD / DEVOPS"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full bg-purple-500"
-              title="Cloud & DevOps (1)"
+              title={`Cloud & DevOps (${categoryCounts["CLOUD / DEVOPS"] || 0})`}
             />
             <div
-              style={{ width: `${(2 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["FULL STACK"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full bg-emerald-500"
-              title="Programming & Full Stack (2)"
+              title={`Programming & Full Stack (${categoryCounts["FULL STACK"] || 0})`}
             />
             <div
-              style={{ width: `${(5 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["WORKSHOPS"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full bg-amber-400"
-              title="Workshops & Professional Dev (5)"
+              title={`Workshops & Professional Dev (${categoryCounts["WORKSHOPS"] || 0})`}
             />
             <div
-              style={{ width: `${(2 / 19) * 100}%` }}
+              style={{ width: `${((categoryCounts["LEADERSHIP"] || 0) / (learningCredentials.length || 1)) * 100}%` }}
               className="h-full rounded-r-full bg-indigo-400"
-              title="Leadership & Activities (2)"
+              title={`Leadership & Activities (${categoryCounts["LEADERSHIP"] || 0})`}
             />
           </div>
 
