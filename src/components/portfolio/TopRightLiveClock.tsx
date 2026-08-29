@@ -22,7 +22,7 @@ export function TopRightLiveClock() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, duration: 0.5 }}
-      className="fixed top-6 right-6 z-[40] hidden sm:flex items-center select-none"
+      className="fixed top-5 right-6 z-[40] hidden 2xl:flex items-center select-none"
     >
       <button
         onClick={handleClick}
