@@ -50,7 +50,7 @@ export function MacWindow({ id, title, appBadge, children, className = "" }: Mac
             </div>
             <button
               onClick={handleRestore}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-primary/40 bg-primary/10 text-primary font-bold hover:bg-primary/20 transition-all active:scale-95"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-orange-500/35 bg-orange-500/15 text-orange-400 font-bold hover:bg-orange-500/25 transition-all active:scale-95"
             >
               <RotateCcw size={12} /> Reopen {title}
             </button>
@@ -105,7 +105,7 @@ export function MacWindow({ id, title, appBadge, children, className = "" }: Mac
               <div className="flex items-center gap-2 font-display text-xs font-semibold text-white/90">
                 <span>{title}</span>
                 {appBadge && (
-                  <span className="font-mono text-[9px] uppercase tracking-wider text-primary px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20">
+                  <span className="font-mono text-[9px] uppercase tracking-wider text-orange-400 px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/30">
                     {appBadge}
                   </span>
                 )}

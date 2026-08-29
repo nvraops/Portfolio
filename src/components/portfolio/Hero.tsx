@@ -163,7 +163,7 @@ export function Hero() {
                 <a
                   href="/CV_Nikhill_Vasudeva_Rao.pdf"
                   download="CV_Nikhill_Vasudeva_Rao.pdf"
-                  className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl border border-primary/40 bg-primary/20 text-[10px] font-bold tracking-wider uppercase text-primary hover:bg-primary/30 hover:border-primary/60 transition-all hover:scale-105 active:scale-95 shadow-md shadow-primary/10"
+                  className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl border border-orange-500/35 bg-orange-500/15 text-[10px] font-bold tracking-wider uppercase text-orange-400 hover:bg-orange-500/25 hover:border-orange-500/50 transition-all hover:scale-105 active:scale-95 shadow-md shadow-orange-500/10"
                 >
                   <FileText size={14} /> RESUME / CV <Download size={12} />
                 </a>

@@ -37,7 +37,7 @@ export function Contact() {
                 {contacts.map((c) => {
                   const itemContent = (
                     <div className="flex items-start gap-4 group cursor-pointer">
-                      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary/20 group-hover:border-primary/45 transition-all duration-300">
+                      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-orange-500/10 border border-orange-500/25 text-orange-400 group-hover:bg-orange-500/20 group-hover:border-orange-500/45 group-hover:text-primary transition-all duration-300">
                         <c.icon size={16} />
                       </div>
                       <div className="min-w-0 flex-1">

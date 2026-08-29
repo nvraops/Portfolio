@@ -34,9 +34,9 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
 
-  --color-cyan: var(--cyan);
-  --color-violet: var(--violet);
-  --color-blue: var(--blue);
+  --color-cyan: #06b6d4;
+  --color-violet: #8b5cf6;
+  --color-blue: #3b82f6;
 
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;

@@ -36,9 +36,9 @@ export function MacBootScreen({ onComplete }: { onComplete: () => void }) {
         <motion.div
           animate={{ scale: [0.95, 1.05, 1], opacity: [0.7, 1] }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 shadow-[0_0_40px_-10px_rgba(239,91,63,0.4)] backdrop-blur-xl"
+          className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-orange-500/40 bg-orange-500/15 shadow-[0_0_40px_-10px_rgba(239,91,63,0.4)] backdrop-blur-xl"
         >
-          <Cpu size={32} className="text-primary animate-pulse" />
+          <Cpu size={32} className="text-orange-400 animate-pulse" />
         </motion.div>
 
         {/* Boot Status Messages */}

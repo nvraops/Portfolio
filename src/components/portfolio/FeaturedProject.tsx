@@ -186,8 +186,8 @@ export function FeaturedProject() {
                     <h3 className="font-display text-2xl sm:text-3xl font-black text-white group-hover:text-primary transition-colors tracking-tight">
                       {proj.name}
                     </h3>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[9px] font-mono font-bold tracking-wider uppercase">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-orange-500/30 bg-orange-500/15 text-orange-400 text-[9px] font-mono font-bold tracking-wider uppercase">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
                       {proj.status}
                     </span>
                   </div>
@@ -234,7 +234,7 @@ export function FeaturedProject() {
               </button>
 
               <div className="flex items-start gap-3 border-b border-white/10 pb-4 mb-4 pr-8">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 border border-primary/20 text-primary shrink-0">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-orange-500/15 border border-orange-500/30 text-orange-400 shrink-0">
                   {selectedProject.id === "vision-assist" ? <Eye size={20} /> : <Bot size={20} />}
                 </div>
                 <div>

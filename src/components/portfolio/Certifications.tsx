@@ -287,8 +287,8 @@ export function Certifications() {
 
           {/* Center/Right: Live Status & Verified Badge */}
           <div className="flex items-center gap-3">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan/20 bg-cyan/10 px-2.5 py-0.5 text-[10px] font-mono font-medium text-cyan">
-              <ShieldCheck size={12} className="text-cyan" />
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-mono font-medium text-cyan-400">
+              <ShieldCheck size={12} className="text-cyan-400" />
               <span>VERIFIED_CREDENTIALS</span>
             </div>
             <div className="font-mono text-[10px] text-muted-foreground hidden md:inline-block">
@@ -388,7 +388,7 @@ export function Certifications() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search credentials, skills, issuers (e.g. AWS, Claude, Python)..."
-                className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-10 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/60 focus:border-cyan/50 focus:bg-white/[0.06] focus:outline-none transition-all font-sans"
+                className="w-full rounded-xl border border-white/10 bg-white/[0.03] pl-10 pr-10 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/60 focus:border-cyan-400/50 focus:bg-white/[0.06] focus:outline-none transition-all font-sans"
               />
               {searchQuery && (
                 <button
@@ -403,13 +403,13 @@ export function Certifications() {
 
             {/* Live Count & Sort Indicator */}
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground self-start md:self-center">
-              <div className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-cyan/90 bg-cyan/10 border border-cyan/30 rounded-lg px-2.5 py-1 shadow-xs">
-                <Calendar size={11} className="text-cyan" />
+              <div className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 rounded-lg px-2.5 py-1 shadow-xs">
+                <Calendar size={11} className="text-cyan-400" />
                 <span>Sorted by Date Done (Latest First ↓)</span>
               </div>
               <div className="flex items-center gap-1.5 text-xs">
                 <span>Showing:</span>
-                <span className="font-bold text-cyan">
+                <span className="font-bold text-cyan-400">
                   {filteredItems.length} {filteredItems.length === 1 ? "record" : "records"}
                 </span>
               </div>
@@ -430,14 +430,14 @@ export function Certifications() {
                   aria-selected={isActive}
                   className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-cyan/15 text-cyan border border-cyan/40 shadow-[0_0_12px_rgba(0,255,255,0.1)]"
+                      ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-[0_0_12px_rgba(6,182,212,0.15)]"
                       : "bg-white/[0.02] text-muted-foreground hover:text-white border border-white/5 hover:border-white/15"
                   }`}
                 >
                   <span>{category}</span>
                   <span
                     className={`text-[9px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? "bg-cyan/25 text-cyan" : "bg-white/5 text-muted-foreground"
+                      isActive ? "bg-cyan-500/30 text-cyan-300" : "bg-white/5 text-muted-foreground"
                     }`}
                   >
                     {count}
@@ -463,7 +463,7 @@ export function Certifications() {
                   setSearchQuery("");
                   setSelectedCategory("ALL");
                 }}
-                className="mt-2 text-xs font-mono text-cyan underline cursor-pointer"
+                className="mt-2 text-xs font-mono text-cyan-400 underline cursor-pointer"
               >
                 Reset all filters
               </button>
@@ -495,7 +495,7 @@ export function Certifications() {
                       }}
                       className={`group relative flex flex-col justify-between rounded-2xl border p-5 sm:p-6 transition-all duration-300 cursor-pointer overflow-hidden ${
                         isPrimary
-                          ? "border-white/10 bg-[#0e0e14]/90 hover:border-cyan/50 hover:bg-[#13131c] hover:shadow-[0_0_20px_rgba(0,255,255,0.06)] hover:-translate-y-1"
+                          ? "border-white/10 bg-[#0e0e14]/90 hover:border-cyan-400/50 hover:bg-[#13131c] hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] hover:-translate-y-1"
                           : isActivity
                           ? "border-white/10 bg-[#0a0a0e]/75 hover:border-indigo-400/40 hover:bg-[#101017] hover:-translate-y-0.5"
                           : "border-white/10 bg-[#0b0b10]/80 hover:border-amber-400/35 hover:bg-[#111118] hover:-translate-y-0.5"
@@ -504,20 +504,20 @@ export function Certifications() {
                       {/* Cyber Accent Corners for Primary Cards */}
                       {isPrimary && (
                         <>
-                          <div className="absolute left-0 top-0 h-2.5 w-2.5 border-l border-t border-cyan/40 group-hover:border-cyan transition-colors" />
-                          <div className="absolute right-0 top-0 h-2.5 w-2.5 border-r border-t border-cyan/40 group-hover:border-cyan transition-colors" />
+                          <div className="absolute left-0 top-0 h-2.5 w-2.5 border-l border-t border-cyan-400/40 group-hover:border-cyan-400 transition-colors" />
+                          <div className="absolute right-0 top-0 h-2.5 w-2.5 border-r border-t border-cyan-400/40 group-hover:border-cyan-400 transition-colors" />
                         </>
                       )}
 
                       {/* Card ID Code */}
-                      <div className="absolute right-3.5 top-3.5 font-mono text-[9px] text-muted-foreground/40 group-hover:text-cyan/60 transition-colors">
+                      <div className="absolute right-3.5 top-3.5 font-mono text-[9px] text-muted-foreground/40 group-hover:text-cyan-400/80 transition-colors">
                         REC-{String(idx + 1).padStart(2, "0")}
                       </div>
 
                       {/* Top Section: Logo & Org & Type */}
                       <div>
                         <div className="flex items-center gap-3 mb-3.5 pr-10">
-                          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-cyan/30 transition-colors">
+                          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-cyan-400/30 transition-colors">
                             <OrgLogo issuer={item.issuer} className="w-5 h-5" />
                           </div>
                           <div>
@@ -527,7 +527,7 @@ export function Certifications() {
                             <span
                               className={`inline-block mt-0.5 font-mono text-[9px] px-2 py-0.5 rounded-full border ${
                                 item.category === "AI / ML" || item.category === "AGENTIC AI"
-                                  ? "bg-cyan/10 border-cyan/30 text-cyan"
+                                  ? "bg-cyan-500/10 border-cyan-500/30 text-cyan-400"
                                   : item.category === "MICROSOFT"
                                   ? "bg-blue-500/10 border-blue-500/30 text-blue-400"
                                   : item.category === "CLOUD / DEVOPS"
@@ -545,14 +545,14 @@ export function Certifications() {
                         </div>
 
                         {/* Title */}
-                        <h4 className="font-sans text-sm font-bold text-white leading-snug group-hover:text-cyan transition-colors mb-2 line-clamp-2">
+                        <h4 className="font-sans text-sm font-bold text-white leading-snug group-hover:text-cyan-400 transition-colors mb-2 line-clamp-2">
                           {item.title}
                         </h4>
 
                         {/* Completion Date */}
                         {displayDate && (
-                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-cyan/80 mb-2">
-                            <Calendar size={11} className="text-cyan/80" />
+                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-cyan-400/80 mb-2">
+                            <Calendar size={11} className="text-cyan-400/80" />
                             <span>{displayDate}</span>
                           </div>
                         )}
@@ -587,7 +587,7 @@ export function Certifications() {
                           <span className="inline-flex items-center gap-1 text-[10px] text-emerald-400/90 font-medium">
                             <ShieldCheck size={12} /> Verified
                           </span>
-                          <span className="text-cyan group-hover:underline inline-flex items-center gap-1 font-semibold">
+                          <span className="text-cyan-400 group-hover:underline inline-flex items-center gap-1 font-semibold">
                             Inspect Record →
                           </span>
                         </div>
@@ -626,7 +626,7 @@ export function Certifications() {
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-lg rounded-2xl border border-cyan/30 bg-[#0c0c14] shadow-2xl overflow-hidden relative"
+              className="w-full max-w-lg rounded-2xl border border-cyan-500/30 bg-[#0c0c14] shadow-2xl overflow-hidden relative"
             >
               {/* Modal Window Header */}
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5 bg-white/[0.03]">
@@ -639,7 +639,7 @@ export function Certifications() {
                   />
                   <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
                   <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
-                  <span className="ml-3 font-mono text-[10px] text-cyan/70">
+                  <span className="ml-3 font-mono text-[10px] text-cyan-400/70">
                     CREDENTIAL_INSPECTOR://{activeModalItem.id}
                   </span>
                 </div>
@@ -656,12 +656,12 @@ export function Certifications() {
               <div className="p-6 sm:p-7 max-h-[80vh] overflow-y-auto">
                 {/* Header Profile */}
                 <div className="flex items-start gap-4 pb-5 border-b border-white/10">
-                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-cyan/10 border border-cyan/30 text-cyan">
+                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
                     <OrgLogo issuer={activeModalItem.issuer} className="w-7 h-7" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400">
                         {activeModalItem.issuer}
                       </span>
                       <span className="inline-flex items-center gap-1 text-[9px] font-mono text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2 py-0.5 rounded-full">
@@ -682,11 +682,11 @@ export function Certifications() {
                   </div>
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
                     <span className="text-[10px] text-muted-foreground block">DOMAIN CATEGORY</span>
-                    <span className="text-cyan font-bold mt-0.5 block">{activeModalItem.category}</span>
+                    <span className="text-cyan-400 font-bold mt-0.5 block">{activeModalItem.category}</span>
                   </div>
                   {formatDisplayDate(activeModalItem) && (
                     <div className="col-span-2 p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
-                      <Calendar size={14} className="text-cyan" />
+                      <Calendar size={14} className="text-cyan-400" />
                       <div>
                         <span className="text-[10px] text-muted-foreground block">COMPLETION DATE</span>
                         <span className="text-white font-bold">{formatDisplayDate(activeModalItem)}</span>
@@ -716,7 +716,7 @@ export function Certifications() {
                         key={sIdx}
                         className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.02] border border-white/5"
                       >
-                        <CheckCircle2 size={14} className="text-cyan shrink-0" />
+                        <CheckCircle2 size={14} className="text-cyan-400 shrink-0" />
                         <span className="text-xs text-foreground/90 font-medium font-sans">{skill}</span>
                       </div>
                     ))}
@@ -730,7 +730,7 @@ export function Certifications() {
                       href={activeModalItem.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan/15 hover:bg-cyan/25 border border-cyan/40 text-cyan text-xs font-mono font-bold transition-all"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/40 text-cyan-300 text-xs font-mono font-bold transition-all"
                     >
                       <span>View Official Credential</span>
                       <ExternalLink size={13} />
